@@ -108,7 +108,7 @@ test_dataset = (
 
 noise = 1.0
 
-def neg_log_likelihood(y_obs, y_pred, sigma=noise):
+def neg_log_likelihood(y_obs, y_pred, sigma=noise): # this function was modified with reduce_sum function from original version by krasserm
     dist = tfp.distributions.Normal(loc=y_pred, scale=sigma)
     return tf.reduce_sum(-dist.log_prob(y_obs))
 
